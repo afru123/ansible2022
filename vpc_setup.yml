@@ -1,6 +1,6 @@
 - hosts: localhost
   connection: local
-  gather_facts: True
+  gather_facts: yes
   tasks:
     - name: Import VPC Variables
       include_vars: vars/variables.yml
