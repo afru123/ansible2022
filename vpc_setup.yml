@@ -2,7 +2,7 @@
   connection: local
   gather_facts: False
   tasks:
-    - name: Importing varaibales
+    - name: Importing variables
       vars_files:
         - vpc_setup
     - name: Create vprofile VPC
