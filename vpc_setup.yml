@@ -1,4 +1,4 @@
-- hosts: 172.31.81.118
+- hosts: localhost
   connection: local
   gather_facts: False
   tasks:
