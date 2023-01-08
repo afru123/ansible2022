@@ -1,6 +1,5 @@
 - hosts: all
   become: yes
-  connection: local
   gather_facts: yes
   tasks:
     - name: Import VPC Variables
