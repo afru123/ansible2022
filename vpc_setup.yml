@@ -2,9 +2,9 @@
   connection: local
   gather_facts: False
   tasks:
-    - name: Importing variables
-      vars_files:
-        - vpc_setup
+    - name: Import VPC Variables
+      include_vars: vars/vpc_setup
+
     - name: Create vprofile VPC
       ec2_vpc_net:
         name: "{{vpc_name}}"
@@ -15,4 +15,3 @@
         tenancy: default
         state: "{{state}}"
       register: vpcout
-
