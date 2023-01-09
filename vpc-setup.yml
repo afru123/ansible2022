@@ -108,7 +108,7 @@
           name: vprofile-pubRT
         subnets:
           - "{{pubsub1_out}}"
-          - "{{pubsub3_out}}"
+          - "{{pubsub2_out}}"
           - "{{pubsub3_out}}"
         routes:
           - det: 0.0.0.0/0
@@ -124,6 +124,20 @@
         if_exist_do_not_create: true
       register: NATGW_out
 
+    - name: Setup private subnet route table
+      ec2_vpc_route_table:
+        vpc_id: "{{vpcout.vpc.id}}"
+        region: "{{region}}"
+        tags:
+          name: vprofile-privRT
+        subnets:
+          - "{{privsub1_out}}"
+          - "{{privsub2_out}}"
+          - "{{privsub3_out}}"
+        routes:
+          - det: 0.0.0.0/0
+            gateway_id: "{{NATGW_out.nat_gateway_id}}"
+      register: privRT_out
 
 
 
