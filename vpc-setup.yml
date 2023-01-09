@@ -100,6 +100,21 @@
           name: vprofile_IGW
       register: igw_out
 
+    - name: Setup public subnet route table
+      ec2_vpc_route_table:
+        vpc_id: "{{vpcout.vpc.id}}"
+        region: "{{region}}"
+        tags:
+          name: vprofile-pubRT
+        subnets:
+          - "{{pubsub1_out}}"
+          - "{{pubsub3_out}}"
+          - "{{pubsub3_out}}"
+        routes:
+          - det: 0.0.0.0/0
+            gateway_id: "{{igw_out.gateway_id}}"
+      register: pubRT_out
+
 
 
 
