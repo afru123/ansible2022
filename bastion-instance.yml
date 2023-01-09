@@ -10,7 +10,7 @@
     - name: Import VPC setup variables
       include_vars: vars/output_vars
 
-    - name: Create vprofile EC2 Key
+    - name: Create vprofile ec2 Key
       ec2_key:
         name: vprofile-key
         region: "region"
