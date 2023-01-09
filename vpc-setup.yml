@@ -115,7 +115,7 @@
             gateway_id: "{{igw_out.gateway_id}}"
       register: pubRT_out
 
-    - name: Create a new nat gateway and allocate new Elastic IP if a nat gatway does not yest exist in the subnet.
+    - name: Create a new nat gateway and allocate new Elastic IP if a nat gatway does not yet exist in the subnet.
       ec2_vpc_nat_gateway:
         state: "{{state}}"
         subnet_id: "{{pubsub1_out.subnet.id}}"
