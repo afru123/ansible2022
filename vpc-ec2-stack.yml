@@ -52,5 +52,5 @@
           - proto: tcp
             from_port: 22
             to_port: 22
-            group_id: "{{bastionSGid}}"
+            group_id: "{{BastionSGid}}"
 
